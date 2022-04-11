@@ -5,7 +5,9 @@
 
 ../../bench/UVM/testbench.sv
 ../../bench/UVM/interface.sv
-
+../../bench/UVM/item.sv
+../../bench/UVM/driver.sv
+../../bench/UVM/monitor.sv
 
 
 
