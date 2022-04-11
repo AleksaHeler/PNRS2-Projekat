@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+
 module testbench;
     parameter PDATA_SIZE        = 8;
 

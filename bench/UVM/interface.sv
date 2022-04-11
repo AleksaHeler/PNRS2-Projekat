@@ -1,3 +1,3 @@
-interface apb_if;
+interface device_if;
     
 endinterface
