@@ -1,0 +1,103 @@
+# 
+# 
+# 
+# 
+# //  Questa Sim-64
+# //  Version 10.4d win64 Dec 30 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# do run.do
+# QuestaSim-64 vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 12:52:41 on Apr 06,2022
+# vlog -reportprogress 300 -f sim.f 
+# -- Compiling module apb_gpio
+# -- Compiling module apb_master_bfm
+# -- Compiling module test
+# -- Compiling module testbench_top
+# 
+# Top level modules:
+# 	testbench_top
+# End time: 12:52:42 on Apr 06,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 12:52:42 on Apr 06,2022
+# vopt -reportprogress 300 testbench_top -o top_optimized "+acc" "+cover=sbfec+device." 
+# 
+# Top level modules:
+# 	testbench_top
+# 
+# Analyzing design...
+# -- Loading module testbench_top
+# -- Loading module test
+# -- Loading module apb_master_bfm
+# -- Loading module apb_gpio
+# ** Warning: (vopt-2008) Cannot find module or instance 'device' specified in +cover option.
+# 
+# Optimizing 4 design-units (inlining 0/4 module instances, 0/0 UDP instances):
+# -- Optimizing module test(fast)
+# -- Optimizing module apb_gpio(fast)
+# -- Optimizing module apb_master_bfm(fast)
+# -- Optimizing module testbench_top(fast)
+# Optimized design name is top_optimized
+# End time: 12:52:42 on Apr 06,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim top_optimized -coverage "+UVM_TESTNAME=device_model_base_test" 
+# Start time: 12:52:42 on Apr 06,2022
+# Loading sv_std.std
+# Loading work.testbench_top(fast)
+# Loading work.test(fast)
+# Loading work.apb_master_bfm(fast)
+# Loading work.apb_gpio(fast)
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# 
+# 1
+# ------------------------------------------------------------
+#  ,------.                    ,--.                ,--.       
+#  |  .--. ' ,---.  ,--,--.    |  |    ,---. ,---. `--' ,---. 
+#  |  '--'.'| .-. |' ,-.  |    |  |   | .-. | .-. |,--.| .--' 
+#  |  |\  \ ' '-' '\ '-'  |    |  '--.' '-' ' '-' ||  |\ `--. 
+#  `--' '--' `---'  `--`--'    `-----' `---' `-   /`--' `---' 
+#                                            `---'            
+#  APB GPIO Testbench Initialized                             
+# ------------------------------------------------------------
+# Checking reset values ...
+# Basic IO test ...
+# Random IO test ...
+# Clear Status Register test ...
+# Trigger Level-Low test ...
+# Trigger Level-High test ...
+# Trigger Level-Random test ...
+# Trigger Falling-Edge test ...
+# Trigger Rising-Edge test ...
+# Trigger Random-Edge test ...
+# IRQ test ...
+# ------------------------------------------------------------
+#  APB GPIO Testbench finished successfully @19383990
+# ------------------------------------------------------------
+# ** Note: $finish    : ../../bench/verilog/test.sv(159)
+#    Time: 19383990 ns  Iteration: 1  Instance: /testbench_top/tb
+# 1
+# Break in Module test at ../../bench/verilog/test.sv line 159
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 15:51:31 on Apr 06,2022, Elapsed time: 2:58:49
+# Errors: 0, Warnings: 1
