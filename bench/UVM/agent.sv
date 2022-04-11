@@ -1,7 +1,7 @@
-//  Class: scoreboard
+//  Class: agent
 //
-class scoreboard extends uvm_scoreboard;
-    `uvm_component_utils(scoreboard);
+class agent extends uvm_agent;
+    `uvm_component_utils(agent);
 
     //  Group: Configuration Object(s)
 
@@ -18,9 +18,9 @@ class scoreboard extends uvm_scoreboard;
     //  Group: Functions
 
     //  Constructor: new
-    function new(string name = "scoreboard", uvm_component parent);
+    function new(string name = "agent", uvm_component parent);
         super.new(name, parent);
     endfunction: new
 
     
-endclass: scoreboard
+endclass: agent

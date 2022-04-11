@@ -1,7 +1,7 @@
-//  Class: scoreboard
+//  Class: base_test
 //
-class scoreboard extends uvm_scoreboard;
-    `uvm_component_utils(scoreboard);
+class base_test extends uvm_test;
+    `uvm_component_utils(base_test);
 
     //  Group: Configuration Object(s)
 
@@ -18,9 +18,9 @@ class scoreboard extends uvm_scoreboard;
     //  Group: Functions
 
     //  Constructor: new
-    function new(string name = "scoreboard", uvm_component parent);
+    function new(string name = "base_test", uvm_component parent);
         super.new(name, parent);
     endfunction: new
 
     
-endclass: scoreboard
+endclass: base_test
