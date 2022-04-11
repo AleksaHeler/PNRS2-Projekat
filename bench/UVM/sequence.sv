@@ -1,7 +1,7 @@
-//  Class: sequence
+//  Class: device_seq
 //
-class sequence extends uvm_sequence;
-    `uvm_object_utils(sequence);
+class device_seq extends uvm_sequence;
+    `uvm_object_utils(device_seq);
 
     //  Group: Variables
 
@@ -12,7 +12,7 @@ class sequence extends uvm_sequence;
     //  Group: Functions
 
     //  Constructor: new
-    function new(string name = "sequence");
+    function new(string name = "device_seq");
         super.new(name);
     endfunction: new
 
@@ -63,4 +63,4 @@ class sequence extends uvm_sequence;
     //  execution of <post_body>.
     // extern virtual task post_start();
     
-endclass: sequence
+endclass: device_seq

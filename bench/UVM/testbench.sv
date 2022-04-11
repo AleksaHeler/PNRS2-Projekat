@@ -43,6 +43,12 @@ module testbench;
       #32;
       PRESETn = 1'b1;
     end : gen_PRESETn;
+
+    device_if interface(PCLK, PRESETn);
+
+    apb_gpio DUT (
+
+    );
   
   
     /////////////////////////////////////////////////////////
