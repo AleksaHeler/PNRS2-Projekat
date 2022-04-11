@@ -1,6 +1,15 @@
+
+# TODO
+ - [ ] driver i monitor [Aleksa]
+ - [ ] sequence i sequence item
+ - [ ] scoreboard
+ - [ ] agent, environment, tb_top, interface [Marko]
+ - [ ] base test -> tests
+
+## UVM Tutorial
 https://www.chipverify.com/uvm/uvm-verification-testbench-example
 
-# Git proxy setup
+## Git proxy setup
 git config --global http.proxy http://ftn.proxy:8080
 
 # APB4 General Purpose IO (GPIO)
