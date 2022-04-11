@@ -34,7 +34,7 @@ class driver extends uvm_driver #(sequence_item);
     endtask //run_phase
 
     // Wait for clocking block
-    virtual task drive_item(Item m_item);
+    virtual task drive_item(sequence_item m_item);
         @(vif.driver_cb);
             `uvm_info("DRV", $sformatf("Inside drive_item function"), UVM_HIGH)
             // TODO: drive interface based on item

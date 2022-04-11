@@ -1,10 +1,9 @@
 import uvm_pkg::*;
+import my_package::*;
 
 module testbench;
-    parameter PDATA_SIZE        = 8;
-
     bit PCLK, PRESETn;
-    
+
     //GPIOs
     logic [PDATA_SIZE -1:0] gpio_o, gpio_i, gpio_oe;
   
