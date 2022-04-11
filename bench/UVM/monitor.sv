@@ -30,14 +30,16 @@ class monitor extends uvm_monitor;
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         forever begin
-            @(vif.cb);
-                if(vif.rstn) begin
-                    Item item = Item::type_id::create("item");
-                    item.in = vif.in;
-                    item.out = vif.cb.out;
-                    mon_analysis_port.write(item);
-                    `uvm_info("MON", $sformatf("Saw items %s", item.convert2str()), UVM_HIGH)
-                end
+            @(vif.monitor_cb);
+                `uvm_info("DRV", $sformatf("Inside run_phase function"), UVM_HIGH)
+                // TODO: read right data
+                //if(vif.rstn) begin
+                    //Item item = Item::type_id::create("item");
+                    //item.in = vif.in;
+                    //item.out = vif.monitor_cb.out;
+                    //mon_analysis_port.write(item);
+                    //`uvm_info("MON", $sformatf("Saw items %s", item.convert2str()), UVM_HIGH)
+                //end
         end
     endtask
 

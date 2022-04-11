@@ -35,9 +35,10 @@ class driver extends uvm_driver #(Item);
 
     // Wait for clocking block
     virtual task drive_item(Item m_item);
-        @(vif.cb);
+        @(vif.driver_cb);
+            `uvm_info("DRV", $sformatf("Inside drive_item function"), UVM_HIGH)
             // TODO: drive interface based on item
             // This is just passing one bit from item to intf
-            vif.cb.in <= m_item.in;
+            //vif.cb.in <= m_item.in;
     endtask // drive_item
 endclass
