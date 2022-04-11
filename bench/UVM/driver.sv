@@ -11,12 +11,12 @@ class driver extends uvm_driver #(Item);
     endfunction // new
 
     // Virtual interface to DUT
-    virtual apb_if vif;
+    virtual device_if vif;
 
     // In build phase: get interface
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if(!uvm_config_db#(virtual apb_if)::get(this, "", "apb_vif", vif))
+        if(!uvm_config_db#(virtual device_if)::get(this, "", "apb_vif", vif))
             `uvm_fatal("DRV", "Could not get vif")
     endfunction // build_phase
 
