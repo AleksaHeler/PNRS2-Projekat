@@ -44,10 +44,21 @@ module testbench;
       PRESETn = 1'b1;
     end : gen_PRESETn;
 
-    device_if interface(PCLK, PRESETn);
+    device_if device_interface(PCLK, PRESETn);
 
     apb_gpio DUT (
-
+      .PCLK(PCLK),
+      .PRESETn(PRESETn),
+      .PSEL(device_interface.PSEL),
+      .PENABLE(device_interface.PENABLE),
+      .PADDR(device_interface.PADDR),
+      .PWRITE(device_interface.PWRITE),
+      .PSTRB(device_interface.PSTRB),
+      .PWDATA(device_interface.PWDATA),
+      .PRDATA(device_interface.PRDATA),
+      .PREADY(device_interface.PREADY),
+      .PSLVERR(device_interface.PSLVERR),
+      .*
     );
   
   

@@ -1,15 +1,16 @@
-interface device_if (input logic PCLK, PRESETn,
-    parameter PADDR_SIZE = 16,
-    parameter PDATA_SIZE = 32);
+parameter PADDR_SIZE = 4;
+parameter PDATA_SIZE = 8;
 
-    output reg                    PSEL,
-    output reg                    PENABLE,
-    output reg [PADDR_SIZE  -1:0] PADDR,
-    output reg [PDATA_SIZE/8-1:0] PSTRB,
-    output reg [PDATA_SIZE  -1:0] PWDATA,
-    input      [PDATA_SIZE  -1:0] PRDATA,
-    output reg                    PWRITE,
-    input                         PREADY,
-    input                         PSLVERR
+interface device_if (input logic PCLK, PRESETn);
+
+    logic                    PSEL;
+    logic                    PENABLE;
+    logic [PADDR_SIZE  -1:0] PADDR;
+    logic [PDATA_SIZE/8-1:0] PSTRB;
+    logic [PDATA_SIZE  -1:0] PWDATA;
+    logic [PDATA_SIZE  -1:0] PRDATA;
+    logic                    PWRITE;
+    logic                    PREADY;
+    logic                    PSLVERR;
     
 endinterface

@@ -3,7 +3,8 @@
 ../../bench/verilog/test.sv
 ../../bench/verilog/testbench_top.sv
 
-../../bench/UVM/*
+../../bench/UVM/testbench.sv
+../../bench/UVM/interface.sv
 
 
 
