@@ -2,7 +2,7 @@
 // The driver is responsible for driving the transactions to the DUT
 // All it does is to get a transaction from the mailbox if it is available
 // and drive it out into the DUT interface.
-class driver extends uvm_driver;
+class driver extends uvm_driver #(Item);
     `uvm_component_utils(driver)
 
     // Constructor
