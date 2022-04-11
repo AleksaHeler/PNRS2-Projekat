@@ -1,7 +1,8 @@
-//  Class: sequence_item
+
+//  Class: seq_item
 //
-class sequence_item extends uvm_sequence_item;
-    `uvm_object_utils(sequence_item);
+class seq_item extends uvm_sequence_item;
+    
 
     //  Group: Variables
     bit                    PSEL;
@@ -14,6 +15,8 @@ class sequence_item extends uvm_sequence_item;
     bit                    PREADY;
     bit                    PSLVERR;
 
+    `uvm_object_utils(seq_item);
+
     //  Group: Constraints
 
 
@@ -24,7 +27,7 @@ class sequence_item extends uvm_sequence_item;
     endfunction
 
     //  Constructor: new
-    function new(string name = "sequence_item");
+    function new(string name = "seq_item");
         super.new(name);
     endfunction: new
 
@@ -43,4 +46,4 @@ class sequence_item extends uvm_sequence_item;
     //  Function: do_unpack
     // extern function void do_unpack();
     
-endclass: sequence_item
+endclass: seq_item
