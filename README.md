@@ -5,9 +5,9 @@ git config --global http.proxy http://ftn.proxy:8080
 
 The APB4 GPIO Core is fully parameterised core designed to provide a user-defined number of general purpose, bidirectional IO to a design.
 
-The IO are accessible via an [AMBA APB v2.0 Specification](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html)interface – typically referred to as APB4 – and the core operates synchronously with the rising edge of the APB4 Bus Clock..
+The IO are accessible via an [AMBA APB v2.0 Specification](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html) interface – typically referred to as APB4 – and the core operates synchronously with the rising edge of the APB4 Bus Clock.
 
-Inputs to the core may operate asynchronously to the core and will be automatically synchronised to the bus clock. Outputs may be configured to operate in push-pull mode or open-drain
+Inputs to the core may operate asynchronously to the core and will be automatically synchronised to the bus clock. Outputs may be configured to operate in push-pull mode or open-drain.
 
 GPIO inputs may also be individually configured to generate a level or edge sensitive interrupt. A single IRQ output is provided to connect to the host.
 
