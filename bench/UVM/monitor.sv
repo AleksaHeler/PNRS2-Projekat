@@ -13,7 +13,7 @@ class monitor extends uvm_monitor;
     endfunction: new
 
     // Monitor analysis port
-    uvm_analysis_port #(Item) mon_analysis_port;
+    uvm_analysis_port #(sequence_item) mon_analysis_port;
     // Virtual interface to DUT
     virtual device_if vif;
 

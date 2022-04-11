@@ -2,7 +2,7 @@
 // The driver is responsible for driving the transactions to the DUT
 // All it does is to get a transaction from the mailbox if it is available
 // and drive it out into the DUT interface.
-class driver extends uvm_driver #(Item);
+class driver extends uvm_driver #(sequence_item);
     `uvm_component_utils(driver)
 
     // Constructor
@@ -25,7 +25,7 @@ class driver extends uvm_driver #(Item);
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         forever begin
-            Item m_item;
+            sequence_item m_item;
             `uvm_info("DRV", $sformatf("Wait for item from sequencer"), UVM_HIGH)
             seq_item_port.get_next_item(m_item);
             drive_item(m_item);
