@@ -2,3 +2,4 @@ docs/build
 sim/questa/work
 *.ucdb
 wlf*
+sim/questa/vsim.wlf
