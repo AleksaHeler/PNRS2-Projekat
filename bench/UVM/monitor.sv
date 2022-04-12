@@ -4,6 +4,9 @@
 // It sees ne transactions and then captures information
 // into a packet and sends it to the scoreboard
 // using another mailbox.
+
+`define MON_IF vif.MONITOR.monitor_cb
+
 class apb_monitor extends uvm_monitor;
     `uvm_component_utils(apb_monitor);
 
