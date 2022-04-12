@@ -33,7 +33,7 @@ class apb_monitor extends uvm_monitor;
     // virtual task run_phase(uvm_phase phase);
     //     super.run_phase(phase);
     //     forever begin
-    //         @(vif.monitor_cb);
+    //         @(MON_IF);
     //             `uvm_info("DRV", $sformatf("Inside run_phase function"), UVM_HIGH)
     //             // TODO: read right data
     //             //if(vif.rstn) begin
