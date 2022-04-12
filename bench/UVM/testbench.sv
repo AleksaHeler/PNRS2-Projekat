@@ -12,6 +12,7 @@ parameter MODE      = 0,
           LVL1      = 6,
           STATUS    = 7,
           IRQ_ENA   = 8;
+parameter PSTRB_SIZE=PDATA_SIZE/8;
 
 `include "interface.sv"
 `include "base_test.sv"

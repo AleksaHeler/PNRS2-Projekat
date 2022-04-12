@@ -10,6 +10,8 @@
 class apb_monitor extends uvm_monitor;
     `uvm_component_utils(apb_monitor);
 
+    sequence_item item;
+
     //  Constructor
     function new(string name = "apb_monitor", uvm_component parent);
         super.new(name, parent);
@@ -34,27 +36,27 @@ class apb_monitor extends uvm_monitor;
         super.run_phase(phase);
         forever begin
             // Wait until PSEL is 1
-            while(!MON_IF.PSEL) @(MON_IF);
+            wait(vif.monitor_cb.PSEL);
             
             // Create empty sequence item
-            Item item = Item::type_id::create("item");
+            item = sequence_item::type_id::create("item");
 
             // Populate sequence item with APB bus data
-            item.WRITE = MON_IF.PWRITE;
-            item.ADDR = MON_IF.PADDR;
-            item.STRB = MON_IF.PSTRB;
+            item.WRITE = vif.monitor_cb.PWRITE;
+            item.ADDR = vif.monitor_cb.PADDR;
+            item.STRB = vif.monitor_cb.PSTRB;
 
             // Wait until peripheral is ready
-            while(!DRIV_IF.PREADY) @(DRIV_IF);
+            wait(vif.monitor_cb.PREADY);
             
             // Populate sequence item with GPIO data
-            item.DATA = MON_IF.PWDATA;
-            item.gpio_o = MON_IF.gpio_o;
-            item.gpio_i = MON_IF.gpio_i;
-            item.gpio_oe = MON_IF.gpio_oe;
+            item.DATA = vif.monitor_cb.PWDATA;
+            item.gpio_o = vif.monitor_cb.gpio_o;
+            item.gpio_i = vif.monitor_cb.gpio_i;
+            item.gpio_oe = vif.monitor_cb.gpio_oe;
 
             // wait until psel is 0
-            while(!DRIV_IF.PSEL) @(DRIV_IF);
+            wait(!vif.monitor_cb.PSEL);
 
             // TODO: add print here for debugging
         end

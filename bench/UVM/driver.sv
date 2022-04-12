@@ -33,14 +33,14 @@ class apb_driver extends uvm_driver #(sequence_item);
             `uvm_info("DRV", $sformatf("Wait for item from sequencer"), UVM_HIGH)
             seq_item_port.get_next_item(m_item);
             drive_item(m_item);
-            seq_item_port.idem_done();
+            seq_item_port.item_done();
         end
     endtask //run_phase
 
     // Convert sequence item to signals on interface 
     // Wait for clocking block
     virtual task drive_item(sequence_item m_item);
-        @(DRIV_IF);
+        @(vif.driver_cb);
         `uvm_info("DRV", $sformatf("Inside drive_item function"), UVM_HIGH)
         // TODO: check if seq item is read or write and call that funciton
         if(m_item.WRITE)
@@ -53,52 +53,52 @@ class apb_driver extends uvm_driver #(sequence_item);
     virtual task write(sequence_item m_item);
         `uvm_info("DRV", $sformatf("Inside write function"), UVM_HIGH)
         // Put settings on bus
-        DRIV_IF.PSEL = 1'b1;
-        DRIV_IF.PADDR = m_item.ADDR;
-        DRIV_IF.PSTRB = m_item.STRB;
-        DRIV_IF.PWDATA = m_item.DATA;
-        DRIV_IF.PWRITE = 1'b1;
-        @(DRIV_IF);
+        vif.driver_cb.PSEL <= 1'b1;
+        vif.driver_cb.PADDR <= m_item.ADDR;
+        vif.driver_cb.PSTRB <= m_item.STRB;
+        vif.driver_cb.PWDATA <= m_item.DATA;
+        vif.driver_cb.PWRITE <= 1'b1;
+        @(vif.driver_cb);
 
         // Enable peripheral one clk cycle later 
-        DRIV_IF.PENABLE = 1'b1;
-        @(DRIV_IF);
+        vif.driver_cb.PENABLE <= 1'b1;
+        @(vif.driver_cb);
 
         // Wait until attached peripheral is done with transfer
-        while(!DRIV_IF.PREADY) @(DRIV_IF);
+        wait(vif.driver_cb.PREADY);
 
         // Release bus lines
-        DRIV_IF.PSEL = 1'b0;
-        DRIV_IF.PADDR = {PADDR_SIZE{1'bx}};
-        DRIV_IF.PSTRB = {PDATA_SIZE/8{1'bx}};
-        DRIV_IF.PWDATA = {PDATA_SIZE{1'bx}};
-        DRIV_IF.PWRITE = 1'bx;
-        DRIV_IF.PENABLE = 1'b0;
+        vif.driver_cb.PSEL <= 1'b0;
+        vif.driver_cb.PADDR <= {PADDR_SIZE{1'bx}};
+        vif.driver_cb.PSTRB <= {PDATA_SIZE/8{1'bx}};
+        vif.driver_cb.PWDATA <= {PDATA_SIZE{1'bx}};
+        vif.driver_cb.PWRITE <= 1'bx;
+        vif.driver_cb.PENABLE <= 1'b0;
     endtask // write
 
     virtual task read(sequence_item m_item);
         `uvm_info("DRV", $sformatf("Inside read function"), UVM_HIGH)
         // Put settings on bus
-        DRIV_IF.PSEL = 1'b1;
-        DRIV_IF.PADDR = m_item.ADDR;
-        DRIV_IF.PSTRB = {PDATA_SIZE/8{1'bx}};
-        DRIV_IF.PWDATA = {PDATA_SIZE{1'bx}};
-        DRIV_IF.PWRITE = 1'b0;
-        @(DRIV_IF);
+        vif.driver_cb.PSEL <= 1'b1;
+        vif.driver_cb.PADDR <= m_item.ADDR;
+        vif.driver_cb.PSTRB <= {PDATA_SIZE/8{1'bx}};
+        vif.driver_cb.PWDATA <= {PDATA_SIZE{1'bx}};
+        vif.driver_cb.PWRITE <= 1'b0;
+        @(vif.driver_cb);
 
         // Enable peripheral one clk cycle later 
-        DRIV_IF.PENABLE = 1'b1;
-        @(DRIV_IF);
+        vif.driver_cb.PENABLE <= 1'b1;
+        @(vif.driver_cb);
 
         // Wait until attached peripheral is done with transfer
-        while(!DRIV_IF.PREADY) @(DRIV_IF);
+        wait(vif.driver_cb.PREADY);
         
         // Here the monitor will read data from PRDATA on interface
 
         // Release bus lines
-        DRIV_IF.PSEL = 1'b0;
-        DRIV_IF.PADDR = {PADDR_SIZE{1'bx}};
-        DRIV_IF.PWRITE = 1'bx;
-        DRIV_IF.PENABLE = 1'b0;
+        vif.driver_cb.PSEL <= 1'b0;
+        vif.driver_cb.PADDR <= {PADDR_SIZE{1'bx}};
+        vif.driver_cb.PWRITE <= 1'bx;
+        vif.driver_cb.PENABLE <= 1'b0;
     endtask // read
 endclass

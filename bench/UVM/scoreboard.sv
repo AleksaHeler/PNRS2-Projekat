@@ -11,6 +11,8 @@ class apb_scoreboard extends uvm_scoreboard;
 
     uvm_analysis_imp#(sequence_item, apb_scoreboard) item_collected_export;
 
+
+
     //  Group: Functions
 
     //  Constructor: new
@@ -32,32 +34,32 @@ class apb_scoreboard extends uvm_scoreboard;
         sequence_item packet;
         
         forever begin
-            wait(pkt_qu.size() > 0);
-            packet = pkt_qu.pop_front();
+            wait(packet_queue.size() > 0);
+            packet = packet_queue.pop_front();
+
 
             
-            
-            if(packet.wr_en) begin
-                sc_mem[packet.addr] = packet.wdata;
-                `uvm_info(get_type_name(),$sformatf("------ :: WRITE DATA       :: ------"),UVM_LOW)
-                `uvm_info(get_type_name(),$sformatf("Addr: %0h",packet.addr),UVM_LOW)
-                `uvm_info(get_type_name(),$sformatf("Data: %0h",packet.wdata),UVM_LOW)
-                `uvm_info(get_type_name(),"------------------------------------",UVM_LOW)        
-            end
-            else if(packet.rd_en) begin
-                if(sc_mem[packet.addr] == packet.rdata) begin
-                `uvm_info(get_type_name(),$sformatf("------ :: READ DATA Match :: ------"),UVM_LOW)
-                `uvm_info(get_type_name(),$sformatf("Addr: %0h",packet.addr),UVM_LOW)
-                `uvm_info(get_type_name(),$sformatf("Expected Data: %0h Actual Data: %0h",sc_mem[packet.addr],packet.rdata),UVM_LOW)
-                `uvm_info(get_type_name(),"------------------------------------",UVM_LOW)
-                end
-                else begin
-                `uvm_error(get_type_name(),"------ :: READ DATA MisMatch :: ------")
-                `uvm_info(get_type_name(),$sformatf("Addr: %0h",packet.addr),UVM_LOW)
-                `uvm_info(get_type_name(),$sformatf("Expected Data: %0h Actual Data: %0h",sc_mem[packet.addr],packet.rdata),UVM_LOW)
-                `uvm_info(get_type_name(),"------------------------------------",UVM_LOW)
-                end
-            end
+            // if(packet.wr_en) begin
+            //     sc_mem[packet.addr] = packet.wdata;
+            //     `uvm_info(get_type_name(),$sformatf("------ :: WRITE DATA       :: ------"),UVM_LOW)
+            //     `uvm_info(get_type_name(),$sformatf("Addr: %0h",packet.addr),UVM_LOW)
+            //     `uvm_info(get_type_name(),$sformatf("Data: %0h",packet.wdata),UVM_LOW)
+            //     `uvm_info(get_type_name(),"------------------------------------",UVM_LOW)        
+            // end
+            // else if(packet.rd_en) begin
+            //     if(sc_mem[packet.addr] == packet.rdata) begin
+            //     `uvm_info(get_type_name(),$sformatf("------ :: READ DATA Match :: ------"),UVM_LOW)
+            //     `uvm_info(get_type_name(),$sformatf("Addr: %0h",packet.addr),UVM_LOW)
+            //     `uvm_info(get_type_name(),$sformatf("Expected Data: %0h Actual Data: %0h",sc_mem[packet.addr],packet.rdata),UVM_LOW)
+            //     `uvm_info(get_type_name(),"------------------------------------",UVM_LOW)
+            //     end
+            //     else begin
+            //     `uvm_error(get_type_name(),"------ :: READ DATA MisMatch :: ------")
+            //     `uvm_info(get_type_name(),$sformatf("Addr: %0h",packet.addr),UVM_LOW)
+            //     `uvm_info(get_type_name(),$sformatf("Expected Data: %0h Actual Data: %0h",sc_mem[packet.addr],packet.rdata),UVM_LOW)
+            //     `uvm_info(get_type_name(),"------------------------------------",UVM_LOW)
+            //     end
+            // end
         end
       endtask : run_phase
 
