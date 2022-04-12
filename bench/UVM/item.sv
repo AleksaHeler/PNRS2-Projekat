@@ -22,6 +22,7 @@ class sequence_item extends uvm_sequence_item;
     //  Constructor: new
     function new(string name = "sequence_item");
         super.new(name);
+        STRB = {PSTRB_SIZE{1'b1}};
     endfunction: new
     
 endclass: sequence_item
