@@ -9,6 +9,8 @@ interface device_if (input logic PCLK, PRESETn);
     logic                    PWRITE;
     logic                    PREADY;
     logic                    PSLVERR;
+    logic [PDATA_SIZE -1:0] gpio_o, gpio_i, gpio_oe;
+    logic irq_o;
         
     clocking driver_cb @(posedge PCLK);
         default input #1 output #1;
@@ -20,7 +22,9 @@ interface device_if (input logic PCLK, PRESETn);
         input   PRDATA;
         output  PWRITE;
         input   PREADY;
-        input   PSLVERR;  
+        input   PSLVERR;
+        input   gpio_o, gpio_i, gpio_oe;
+        input   irq_o;
     endclocking
     
     clocking monitor_cb @(posedge PCLK);
@@ -33,7 +37,9 @@ interface device_if (input logic PCLK, PRESETn);
         input   PRDATA;
         input   PWRITE;
         input   PREADY;
-        input   PSLVERR;  
+        input   PSLVERR;
+        input   gpio_o, gpio_i, gpio_oe;
+        input   irq_o;
     endclocking
 
     modport DRIVER  (clocking driver_cb, input PCLK, PRESETn);

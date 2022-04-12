@@ -9,12 +9,6 @@ parameter PDATA_SIZE = 8;
 
 module testbench;
     bit PCLK, PRESETn;
-
-    //GPIOs
-    logic [PDATA_SIZE -1:0] gpio_o, gpio_i, gpio_oe;
-  
-    //IRQ
-    logic irq_o;
     
     device_if device_interface(PCLK, PRESETn);
 
@@ -30,7 +24,10 @@ module testbench;
       .PRDATA(device_interface.PRDATA),
       .PREADY(device_interface.PREADY),
       .PSLVERR(device_interface.PSLVERR),
-      .*
+      .gpio_i(device_interface.gpio_i),
+      .gpio_o(device_interface.gpio_o),
+      .gpio_oe(device_interface.gpio_oe),
+      .irq_o(device_interface.irq_o)
     );
     
       /////////////////////////////////////////////////////////
