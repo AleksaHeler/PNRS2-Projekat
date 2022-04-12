@@ -21,5 +21,18 @@ class apb_environment extends uvm_env;
         super.new(name, parent);
     endfunction: new
 
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+
+        agent_instance = apb_agent::type_id::create("agent_instance", this);
+        scoreboard_instance = apb_scoreboard::type_id::create("scoreboard_instance", this);
+    endfunction: build_phase
+    
+    function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
+
+        // TODO: Implement this
+        // agent_instance.monitor.item_collected_port.connect(mem_scb.item_collected_export);
+    endfunction: connect_phase
     
 endclass: apb_environment
