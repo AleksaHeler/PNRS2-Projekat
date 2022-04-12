@@ -1,7 +1,7 @@
-//  Class: device_seq
+//  Class: apb_sequence
 //
-class device_seq extends uvm_sequence;
-    `uvm_object_utils(device_seq);
+class apb_sequence extends uvm_sequence#(sequence_item);
+    `uvm_object_utils(apb_sequence);
 
     //  Group: Variables
 
@@ -12,9 +12,12 @@ class device_seq extends uvm_sequence;
     //  Group: Functions
 
     //  Constructor: new
-    function new(string name = "device_seq");
+    function new(string name = "apb_sequence");
         super.new(name);
     endfunction: new
+
+    `uvm_declare_p_sequencer(apb_sequencer)
+
 
     //  Task: pre_start
     //  This task is a user-definable callback that is called before the optional 
@@ -44,7 +47,7 @@ class device_seq extends uvm_sequence;
 
     //  Task: body
     //  This is the user-defined task where the main sequence code resides.
-    extern virtual task body();
+    // extern virtual task body();
 
     //  Function: post_do
     //  This function is a user-definable callback function that is called after the 
@@ -63,4 +66,4 @@ class device_seq extends uvm_sequence;
     //  execution of <post_body>.
     // extern virtual task post_start();
     
-endclass: device_seq
+endclass: apb_sequence

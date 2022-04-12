@@ -1,16 +1,13 @@
 //  Class: base_test
 //
+
+`include "env.sv"
+
 class base_test extends uvm_test;
     `uvm_component_utils(base_test);
 
-    //  Group: Configuration Object(s)
-
-    //  Var: config_obj
-    config_obj_t config_obj;
-
-
     //  Group: Components
-
+    apb_environment env;
 
     //  Group: Variables
 

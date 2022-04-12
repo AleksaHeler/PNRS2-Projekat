@@ -1,16 +1,19 @@
-//  Class: agent
+//  Class: apb_agent
 //
-class agent extends uvm_agent;
-    `uvm_component_utils(agent);
 
-    //  Group: Configuration Object(s)
+`include "item.sv"
+`include "sequencer.sv"
+`include "sequence.sv"
+`include "driver.sv"
+`include "monitor.sv"
 
-    //  Var: config_obj
-    config_obj_t config_obj;
-
+class apb_agent extends uvm_agent;
+    `uvm_component_utils(apb_agent);
 
     //  Group: Components
-
+    apb_driver driver;
+    apb_sequencer sequencer;
+    apb_monitor monitor;
 
     //  Group: Variables
 
@@ -18,9 +21,9 @@ class agent extends uvm_agent;
     //  Group: Functions
 
     //  Constructor: new
-    function new(string name = "agent", uvm_component parent);
+    function new(string name = "apb_agent", uvm_component parent);
         super.new(name, parent);
     endfunction: new
 
     
-endclass: agent
+endclass: apb_agent

@@ -1,5 +1,11 @@
 import uvm_pkg::*;
-import my_package::*;
+`include "uvm_macros.svh"
+
+parameter PADDR_SIZE = 4;
+parameter PDATA_SIZE = 8;
+
+`include "interface.sv"
+`include "base_test.sv"
 
 module testbench;
     bit PCLK, PRESETn;

@@ -1,6 +1,3 @@
-parameter PADDR_SIZE = 4;
-parameter PDATA_SIZE        = 8;
-
 interface device_if (input logic PCLK, PRESETn);
 
     logic                    PSEL;

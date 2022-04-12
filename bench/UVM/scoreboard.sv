@@ -1,13 +1,7 @@
-//  Class: scoreboard
+//  Class: apb_scoreboard
 //
-class scoreboard extends uvm_scoreboard;
-    `uvm_component_utils(scoreboard);
-
-    //  Group: Configuration Object(s)
-
-    //  Var: config_obj
-    config_obj_t config_obj;
-
+class apb_scoreboard extends uvm_scoreboard;
+    `uvm_component_utils(apb_scoreboard);
 
     //  Group: Components
 
@@ -18,9 +12,9 @@ class scoreboard extends uvm_scoreboard;
     //  Group: Functions
 
     //  Constructor: new
-    function new(string name = "scoreboard", uvm_component parent);
+    function new(string name = "apb_scoreboard", uvm_component parent);
         super.new(name, parent);
     endfunction: new
 
     
-endclass: scoreboard
+endclass: apb_scoreboard

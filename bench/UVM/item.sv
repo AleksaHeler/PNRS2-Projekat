@@ -15,7 +15,9 @@ class sequence_item extends uvm_sequence_item;
     bit                    PREADY;
     bit                    PSLVERR;
 
-    `uvm_object_utils(sequence_item);
+    `uvm_object_utils_begin(sequence_item)
+        `uvm_field_int(PADDR,UVM_ALL_ON)
+    `uvm_object_utils_end
 
     //  Group: Constraints
 
