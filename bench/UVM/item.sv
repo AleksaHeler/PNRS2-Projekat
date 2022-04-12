@@ -1,51 +1,26 @@
 
 //  Class: sequence_item
-//
 class sequence_item extends uvm_sequence_item;
     
-
     //  Group: Variables
-    bit                    PSEL;
-    bit                    PENABLE;
-    bit [PADDR_SIZE  -1:0] PADDR;
-    bit [PDATA_SIZE/8-1:0] PSTRB;
-    bit [PDATA_SIZE  -1:0] PWDATA;
-    bit [PDATA_SIZE  -1:0] PRDATA;
-    bit                    PWRITE;
-    bit                    PREADY;
-    bit                    PSLVERR;
+    bit                    WRITE;
+    bit [PADDR_SIZE  -1:0] ADDR;
+    bit [PDATA_SIZE/8-1:0] STRB;
+    rand bit [PDATA_SIZE  -1:0] DATA;
 
     `uvm_object_utils_begin(sequence_item)
-        `uvm_field_int(PADDR,UVM_ALL_ON)
+        `uvm_field_int(WRITE,UVM_ALL_ON)
+        `uvm_field_int(ADDR,UVM_ALL_ON)
+        `uvm_field_int(STRB,UVM_ALL_ON)
+        `uvm_field_int(DATA,UVM_ALL_ON)
     `uvm_object_utils_end
 
     //  Group: Constraints
-
-
-    //  Group: Functions
-    virtual function string convert2string();
-        return $sformatf("Select=%0d, Enable=%0d, Address=%0d, Str=%0d, WData=%0d, RData=%0d, Write=%0d, Ready=%0d, SLVERR=%0d", 
-        PSEL, PENABLE, PADDR, PSTRB, PWDATA, PRDATA, PWRITE, PREADY, PSLVERR);
-    endfunction
+    // TODO: add constraints
 
     //  Constructor: new
     function new(string name = "sequence_item");
         super.new(name);
     endfunction: new
-
-    //  Function: do_copy
-    // extern function void do_copy(uvm_object rhs);
-    //  Function: do_compare
-    // extern function bit do_compare(uvm_object rhs, uvm_comparer comparer);
-    //  Function: convert2string
-    // extern function string convert2string();
-    //  Function: do_print
-    // extern function void do_print(uvm_printer printer);
-    //  Function: do_record
-    // extern function void do_record(uvm_recorder recorder);
-    //  Function: do_pack
-    // extern function void do_pack();
-    //  Function: do_unpack
-    // extern function void do_unpack();
     
 endclass: sequence_item
