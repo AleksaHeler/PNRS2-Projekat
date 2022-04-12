@@ -3,6 +3,15 @@ import uvm_pkg::*;
 
 parameter PADDR_SIZE = 4;
 parameter PDATA_SIZE = 8;
+parameter MODE      = 0,
+          DIRECTION = 1,
+          OUTPUT    = 2,
+          INPUT     = 3,
+          TYPE      = 4,
+          LVL0      = 5,
+          LVL1      = 6,
+          STATUS    = 7,
+          IRQ_ENA   = 8;
 
 `include "interface.sv"
 `include "base_test.sv"
