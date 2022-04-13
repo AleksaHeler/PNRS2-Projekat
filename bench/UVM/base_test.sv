@@ -10,7 +10,7 @@ class base_test extends uvm_test;
     apb_environment env;
 
     //  Group: Variables
-    apb_sequence seq;
+    //apb_sequence seq;  no sequence in base test, only in other
 
     //  Group: Functions
 
@@ -24,7 +24,7 @@ class base_test extends uvm_test;
     
         // Create the env
         env = apb_environment::type_id::create("env", this);
-        seq = apb_sequence::type_id::create("seq");
+        //seq = apb_sequence::type_id::create("seq");
     endfunction : build_phase
 
     virtual function void end_of_elaboration();
@@ -32,14 +32,15 @@ class base_test extends uvm_test;
         print();
     endfunction
 
-    task run_phase(uvm_phase phase);
-        phase.raise_objection(this);
-        seq.start(env.agent_instance.sequencer);
-        phase.drop_objection(this);
+    // TODO: implement run_phase in other tests
+    // task run_phase(uvm_phase phase);
+    //     phase.raise_objection(this);
+    //     seq.start(env.agent_instance.sequencer);
+    //     phase.drop_objection(this);
         
-        //set a drain-time for the environment if desired
-        phase.phase_done.set_drain_time(this, 50);
-    endtask : run_phase
+    //     //set a drain-time for the environment if desired
+    //     phase.phase_done.set_drain_time(this, 50);
+    // endtask : run_phase
 
     function void report_phase(uvm_phase phase);
         uvm_report_server svr;

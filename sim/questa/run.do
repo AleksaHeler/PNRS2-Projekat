@@ -6,7 +6,7 @@ vlog -f sim.f
 # UVM testbench is 'testbench'
 vopt testbench -o top_optimized  +acc +cover=sbfec+device.
 
-vsim top_optimized -coverage +UVM_TESTNAME=base_test
+vsim top_optimized -coverage +UVM_TESTNAME=test_io_basic
 
 do wave.do
 
