@@ -18,6 +18,7 @@ parameter PSTRB_SIZE=PDATA_SIZE/8;
 `include "base_test.sv"
 `include "test_reset_register_values.sv"
 `include "test_io_basic.sv"
+`include "test_io_random.sv"
 
 module testbench;
     bit PCLK, PRESETn;

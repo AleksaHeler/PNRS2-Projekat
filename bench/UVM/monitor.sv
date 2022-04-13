@@ -49,7 +49,8 @@ class apb_monitor extends uvm_monitor;
             // wait(vif.monitor_cb.PREADY);
             
             // Populate sequence item with GPIO data
-            item.DATA = vif.monitor_cb.PWDATA;
+            if (item.WRITE) item.DATA = vif.monitor_cb.PWDATA;
+            else item.DATA = vif.monitor_cb.PRDATA;
             item.gpio_o = vif.monitor_cb.gpio_o;
             item.gpio_i = vif.monitor_cb.gpio_i;
             item.gpio_oe = vif.monitor_cb.gpio_oe;

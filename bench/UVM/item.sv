@@ -11,11 +11,7 @@ class sequence_item extends uvm_sequence_item;
     rand bit [PDATA_SIZE -1:0] gpio_i;
     bit [PDATA_SIZE -1:0] gpio_o, gpio_oe;
 
-    `uvm_object_utils_begin(sequence_item)
-        `uvm_field_int(WRITE,UVM_ALL_ON)
-        `uvm_field_int(ADDR,UVM_ALL_ON)
-        `uvm_field_int(DATA,UVM_ALL_ON)
-    `uvm_object_utils_end
+    `uvm_object_utils(sequence_item)
 
     //  Group: Constraints
     // TODO: add constraints

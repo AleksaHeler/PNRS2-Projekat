@@ -25,7 +25,15 @@ run -all
 coverage save test_io_basic.ucdb
 
 
-vcover merge  test_reset_register_values.ucdb test_io_basic.ucdb -out device_overall_coverage.ucdb
+# TEST: io_random
+vsim top_optimized -coverage +UVM_TESTNAME=test_io_random
+set NoQuitOnFinish 1
+onbreak {resume}
+log /* -r
+run -all
+coverage save test_io_random.ucdb
+
+vcover merge test_io_random.ucdb test_reset_register_values.ucdb test_io_basic.ucdb -out device_overall_coverage.ucdb
 do wave.do
 
 
