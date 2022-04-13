@@ -31,8 +31,7 @@ class apb_environment extends uvm_env;
     function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
 
-        // TODO: Implement this
-        // agent_instance.monitor.item_collected_port.connect(mem_scb.item_collected_export);
+        agent_instance.monitor.mon_analysis_port.connect(scoreboard_instance.item_collected_export);
     endfunction: connect_phase
     
 endclass: apb_environment

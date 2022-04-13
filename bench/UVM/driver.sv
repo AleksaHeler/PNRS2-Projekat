@@ -19,7 +19,7 @@ class apb_driver extends uvm_driver #(sequence_item);
     // In build phase: get interface from config
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if(!uvm_config_db#(virtual device_if)::get(this, "", "apb_vif", vif))
+        if(!uvm_config_db#(virtual device_if)::get(this, "", "vif", vif))
             `uvm_fatal("DRV", "Could not get vif")
     endfunction // build_phase
 
@@ -28,9 +28,11 @@ class apb_driver extends uvm_driver #(sequence_item);
     // Once we have it, forward it to task 'drive_item'
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
+        #100;
+        @(vif.driver_cb);
+        vif.driver_cb.gpio_i <= 'h69;
         forever begin
             sequence_item m_item;
-            `uvm_info("DRV", $sformatf("Wait for item from sequencer"), UVM_HIGH)
             seq_item_port.get_next_item(m_item);
             drive_item(m_item);
             seq_item_port.item_done();
@@ -40,8 +42,7 @@ class apb_driver extends uvm_driver #(sequence_item);
     // Convert sequence item to signals on interface 
     // Wait for clocking block
     virtual task drive_item(sequence_item m_item);
-        @(vif.driver_cb);
-        `uvm_info("DRV", $sformatf("Inside drive_item function"), UVM_HIGH)
+        // @(vif.driver_cb);
         // TODO: check if seq item is read or write and call that funciton
         if(m_item.WRITE)
             write(m_item);
@@ -51,7 +52,6 @@ class apb_driver extends uvm_driver #(sequence_item);
 
     // TODO: description
     virtual task write(sequence_item m_item);
-        `uvm_info("DRV", $sformatf("Inside write function"), UVM_HIGH)
         // Put settings on bus
         vif.driver_cb.PSEL <= 1'b1;
         vif.driver_cb.PADDR <= m_item.ADDR;
@@ -65,7 +65,7 @@ class apb_driver extends uvm_driver #(sequence_item);
         @(vif.driver_cb);
 
         // Wait until attached peripheral is done with transfer
-        wait(vif.driver_cb.PREADY);
+        // @(vif.driver_cb);
 
         // Release bus lines
         vif.driver_cb.PSEL <= 1'b0;
@@ -77,7 +77,6 @@ class apb_driver extends uvm_driver #(sequence_item);
     endtask // write
 
     virtual task read(sequence_item m_item);
-        `uvm_info("DRV", $sformatf("Inside read function"), UVM_HIGH)
         // Put settings on bus
         vif.driver_cb.PSEL <= 1'b1;
         vif.driver_cb.PADDR <= m_item.ADDR;
@@ -91,7 +90,7 @@ class apb_driver extends uvm_driver #(sequence_item);
         @(vif.driver_cb);
 
         // Wait until attached peripheral is done with transfer
-        wait(vif.driver_cb.PREADY);
+        // @(vif.driver_cb);
         
         // Here the monitor will read data from PRDATA on interface
 

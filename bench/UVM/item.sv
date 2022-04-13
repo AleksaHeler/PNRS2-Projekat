@@ -3,8 +3,8 @@
 class sequence_item extends uvm_sequence_item;
     
     //  Group: Variables
-    bit                    WRITE;
-    bit [PADDR_SIZE  -1:0] ADDR;
+    rand bit                    WRITE;
+    rand bit [PADDR_SIZE  -1:0] ADDR;
     bit [PDATA_SIZE/8-1:0] STRB;
     rand bit [PDATA_SIZE  -1:0] DATA;
     bit [PDATA_SIZE -1:0] gpio_o, gpio_i, gpio_oe;

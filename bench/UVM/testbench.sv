@@ -50,18 +50,18 @@ module testbench;
       end : gen_PCLK
     
       initial begin : gen_PRESETn;
-        uvm_config_db#(virtual device_if)::set(uvm_root::get(),"*","vif",device_interface);
-        
         PRESETn = 1'b1;
         //ensure falling edge of PRESETn
         #10;
         PRESETn = 1'b0;
         #32;
         PRESETn = 1'b1;
-  
-        //run_test("mytest");
-  
       end : gen_PRESETn;
       //////////////////////////////////////////////////////////
+
+      initial begin
+        uvm_config_db#(virtual device_if)::set(uvm_root::get(),"*","vif",device_interface);
+        run_test("mytest");
+      end
       
   endmodule : testbench

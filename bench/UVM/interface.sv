@@ -23,7 +23,9 @@ interface device_if (input logic PCLK, PRESETn);
         output  PWRITE;
         input   PREADY;
         input   PSLVERR;
-        input   gpio_o, gpio_i, gpio_oe;
+        output  gpio_i;
+        input   gpio_o;
+        input  gpio_oe;
         input   irq_o;
     endclocking
     

@@ -19,12 +19,16 @@ class apb_sequence extends uvm_sequence#(sequence_item);
     `uvm_declare_p_sequencer(apb_sequencer)
 
     virtual task body();
-        int num_of_trans = 10000;
-
-        `uvm_do_with(req, {req.WRITE==1; req.ADDR==MODE;})
-        `uvm_do_with(req, {req.WRITE==1; req.ADDR==DIRECTION;})
-        `uvm_do_with(req, {req.WRITE==1; req.ADDR==INPUT;})
+        `uvm_do_with(req, {req.WRITE==0; req.ADDR==MODE;})
+        `uvm_do_with(req, {req.WRITE==0; req.ADDR==DIRECTION;})
         `uvm_do_with(req, {req.WRITE==0; req.ADDR==OUTPUT;})
+
+        for (int d   =0; d    <= 10; d++   ) begin
+        `uvm_do_with(req, {req.WRITE==1; req.ADDR==MODE; req.DATA=='b0;})
+        `uvm_do_with(req, {req.WRITE==1; req.ADDR==DIRECTION; req.DATA=='b0;})
+        `uvm_do_with(req, {req.WRITE==1; req.ADDR==OUTPUT; req.DATA==d;})
+        `uvm_do_with(req, {req.WRITE==0; req.ADDR==INPUT;})
+        end
 
     endtask
 

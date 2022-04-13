@@ -6,13 +6,13 @@ vlog -f sim.f
 # UVM testbench is 'testbench'
 vopt testbench -o top_optimized  +acc +cover=sbfec+device.
 
-vsim top_optimized -coverage +UVM_TESTNAME=device_model_base_test
+vsim top_optimized -coverage +UVM_TESTNAME=base_test
 
-# do wave.do
+do wave.do
 
 set NoQuitOnFinish 1
 onbreak {resume}
 log /* -r
 run -all
-coverage save device_model_base_test.ucdb
+coverage save mytest.ucdb
 

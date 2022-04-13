@@ -11,7 +11,15 @@ class apb_scoreboard extends uvm_scoreboard;
 
     uvm_analysis_imp#(sequence_item, apb_scoreboard) item_collected_export;
 
-
+    logic [PDATA_SIZE-1:0]  mode_reg,
+                            dir_reg,
+                            out_reg,
+                            in_reg,
+                            tr_type_reg,
+                            tr_lvl0_reg,
+                            tr_lvl1_reg,
+                            tr_stat_reg,
+                            irq_ena_reg;
 
     //  Group: Functions
 
@@ -37,7 +45,13 @@ class apb_scoreboard extends uvm_scoreboard;
             wait(packet_queue.size() > 0);
             packet = packet_queue.pop_front();
 
-
+            if (packet.WRITE) begin
+                `uvm_info(get_type_name(),$sformatf("------ ::      WRITE DATA       :: ------"),UVM_NONE)
+            end 
+            else begin
+                `uvm_info(get_type_name(),$sformatf("------ ::      READ DATA       :: ------"),UVM_NONE)
+                
+            end
             
             // if(packet.wr_en) begin
             //     sc_mem[packet.addr] = packet.wdata;
