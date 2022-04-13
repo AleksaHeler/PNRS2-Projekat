@@ -18,6 +18,15 @@ class apb_sequence extends uvm_sequence#(sequence_item);
 
     `uvm_declare_p_sequencer(apb_sequencer)
 
+    virtual task body();
+        int num_of_trans = 10000;
+
+        `uvm_do_with(req, {req.WRITE==1; req.ADDR==MODE;})
+        `uvm_do_with(req, {req.WRITE==1; req.ADDR==DIRECTION;})
+        `uvm_do_with(req, {req.WRITE==1; req.ADDR==INPUT;})
+        `uvm_do_with(req, {req.WRITE==0; req.ADDR==OUTPUT;})
+
+    endtask
 
     //  Task: pre_start
     //  This task is a user-definable callback that is called before the optional 
