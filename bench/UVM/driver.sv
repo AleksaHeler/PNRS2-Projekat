@@ -30,7 +30,6 @@ class apb_driver extends uvm_driver #(sequence_item);
         super.run_phase(phase);
         #100;
         @(vif.driver_cb);
-        vif.driver_cb.gpio_i <= 'h69;
         forever begin
             sequence_item m_item;
             seq_item_port.get_next_item(m_item);
@@ -44,10 +43,13 @@ class apb_driver extends uvm_driver #(sequence_item);
     virtual task drive_item(sequence_item m_item);
         // @(vif.driver_cb);
         // TODO: check if seq item is read or write and call that funciton
-        if(m_item.WRITE)
-            write(m_item);
-        else
-            read(m_item);
+        if (m_item.GPIO) vif.driver_cb.gpio_i <= m_item.gpio_i;
+        else begin
+            if(m_item.WRITE)
+                write(m_item);
+            else
+                read(m_item);
+        end
     endtask // drive_item
 
     // TODO: description

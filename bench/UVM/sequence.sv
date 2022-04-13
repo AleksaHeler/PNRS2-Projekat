@@ -24,10 +24,11 @@ class apb_sequence extends uvm_sequence#(sequence_item);
         `uvm_do_with(req, {req.WRITE==0; req.ADDR==OUTPUT;})
 
         for (int d   =0; d    <= 10; d++   ) begin
-        `uvm_do_with(req, {req.WRITE==1; req.ADDR==MODE; req.DATA=='b0;})
-        `uvm_do_with(req, {req.WRITE==1; req.ADDR==DIRECTION; req.DATA=='b0;})
-        `uvm_do_with(req, {req.WRITE==1; req.ADDR==OUTPUT; req.DATA==d;})
-        `uvm_do_with(req, {req.WRITE==0; req.ADDR==INPUT;})
+        `uvm_do_with(req, {req.GPIO==1;})
+        `uvm_do_with(req, {req.GPIO==0; req.WRITE==1; req.ADDR==MODE; req.DATA=='b0;})
+        `uvm_do_with(req, {req.GPIO==0; req.WRITE==1; req.ADDR==DIRECTION; req.DATA=='b0;})
+        `uvm_do_with(req, {req.GPIO==0; req.WRITE==1; req.ADDR==OUTPUT; req.DATA==d;})
+        `uvm_do_with(req, {req.GPIO==0; req.WRITE==0; req.ADDR==INPUT;})
         end
 
     endtask

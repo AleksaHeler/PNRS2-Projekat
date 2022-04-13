@@ -35,8 +35,7 @@ class apb_monitor extends uvm_monitor;
     virtual task run_phase(uvm_phase phase);
         super.run_phase(phase);
         forever begin
-            // Wait until PSEL is 1
-            wait(vif.monitor_cb.PSEL);
+            @(posedge vif.monitor_cb.PENABLE);
             
             // Create empty sequence item
             item = sequence_item::type_id::create("item");
@@ -47,7 +46,7 @@ class apb_monitor extends uvm_monitor;
             item.STRB = vif.monitor_cb.PSTRB;
 
             // Wait until peripheral is ready
-            wait(vif.monitor_cb.PREADY);
+            // wait(vif.monitor_cb.PREADY);
             
             // Populate sequence item with GPIO data
             item.DATA = vif.monitor_cb.PWDATA;
@@ -55,10 +54,7 @@ class apb_monitor extends uvm_monitor;
             item.gpio_i = vif.monitor_cb.gpio_i;
             item.gpio_oe = vif.monitor_cb.gpio_oe;
 
-            // wait until psel is 0
-            wait(!vif.monitor_cb.PSEL);
-
-            // TODO: add print here for debugging
+            mon_analysis_port.write(item);
         end
     endtask
     
