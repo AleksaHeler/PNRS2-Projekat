@@ -1,0 +1,284 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/RA22-2018/V04 - SV Interfejsi i BFM-ovi/Questa
+vcoverage
+Z1 DXx6 sv_std 3 std 0 22 >9az<^>2ff9DAl3OFGaAf1
+Z2 DXx4 work 11 tinyalu_pkg 0 22 XnSYOO5_`0Nlj^@4ShUSa1
+Z3 !s110 1648127158
+!i10b 1
+!s100 SY>kfjKjkj]joGZYK3gLb3
+IG6bQeSaW?ZVookMD8FEKI1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s105 coverage_sv_unit
+S1
+R0
+w1648126114
+8coverage.sv
+Fcoverage.sv
+Z5 L0 16
+Z6 OL;L;10.7b;67
+r1
+!s85 0
+31
+Z7 !s108 1648127158.000000
+Z8 !s107 top.sv|scoreboard.sv|coverage.sv|tester.sv|tinyalu_bfm.sv|tinyalu_pkg.sv|
+Z9 !s90 -reportprogress|300|-f|tb.f|
+!i113 0
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 tCvgOpt 0
+vscoreboard
+R1
+R2
+R3
+!i10b 1
+!s100 _jXFB>7i6YVb_0Kc[aDDN1
+I9kVf?8`P^hUkIWX<f[0S92
+R4
+!s105 scoreboard_sv_unit
+S1
+R0
+w1648126009
+8scoreboard.sv
+Fscoreboard.sv
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Esingle_cycle
+Z12 w1648126346
+Z13 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z14 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z15 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z16 8tinyalu_dut/single_cycle_add_and_xor.vhd
+Z17 Ftinyalu_dut/single_cycle_add_and_xor.vhd
+l0
+L18
+V=FjF>dNB<z_N>;zKTDzUN0
+!s100 aZR?V6]bYQYAH9PazN<6h0
+Z18 OL;C;10.7b;67
+32
+R3
+!i10b 1
+R7
+Z19 !s90 -reportprogress|300|-f|dut.f|
+Z20 !s107 tinyalu_dut/tinyalu.vhd|tinyalu_dut/three_cycle_mult.vhd|tinyalu_dut/single_cycle_add_and_xor.vhd|
+!i113 0
+Z21 tExplicit 1 CvgOpt 0
+Aadd_and_xor
+R13
+R14
+R15
+Z22 DEx4 work 12 single_cycle 0 22 =FjF>dNB<z_N>;zKTDzUN0
+l40
+L35
+V@9CXHb;4kM^QYIPcP4P1g1
+!s100 8oMkl8<YobB9R8Rogz]n02
+R18
+32
+R3
+!i10b 1
+R7
+R19
+R20
+!i113 0
+R21
+vtester
+R1
+R2
+R3
+!i10b 1
+!s100 :PEmncNL0I>?]4W8^fVmM2
+IGCFS]6hJaJm=VAQ;IV?483
+R4
+!s105 tester_sv_unit
+S1
+R0
+w1648125993
+8tester.sv
+Ftester.sv
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Ethree_cycle
+Z23 w1648126372
+R13
+R14
+R15
+R0
+Z24 8tinyalu_dut/three_cycle_mult.vhd
+Z25 Ftinyalu_dut/three_cycle_mult.vhd
+l0
+L21
+V:I@BgML>7@WATdz9IZGVd3
+!s100 HE]kckP64T]733d6F_8S^0
+R18
+32
+R3
+!i10b 1
+R7
+R19
+R20
+!i113 0
+R21
+Amult
+R13
+R14
+R15
+Z26 DEx4 work 11 three_cycle 0 22 :I@BgML>7@WATdz9IZGVd3
+l41
+L37
+Vlf1P2;K3jYnZEaXo73IND3
+!s100 =TYcD>o;GA2ACAcPNh1BN1
+R18
+32
+R3
+!i10b 1
+R7
+R19
+R20
+!i113 0
+R21
+Etinyalu
+Z27 w1648126306
+R13
+R14
+R15
+R0
+Z28 8tinyalu_dut/tinyalu.vhd
+Z29 Ftinyalu_dut/tinyalu.vhd
+l0
+L18
+VNb:=m0aBOOJa9iSjF`oVL0
+!s100 ;^C>S@<eCXTN<lOnIAX^I3
+R18
+32
+R3
+!i10b 1
+R7
+R19
+R20
+!i113 0
+R21
+Artl
+R26
+R22
+DEx4 work 7 tinyalu 0 22 Nb:=m0aBOOJa9iSjF`oVL0
+R13
+R14
+R15
+l89
+L40
+VXbz4T1Oj_AL_l^P`dB2g?2
+!s100 ]Ph?6oh@XGGnBT]fD:A>l1
+R18
+32
+R3
+!i10b 1
+R7
+R19
+R20
+!i113 0
+R21
+Ytinyalu_bfm
+R1
+R2
+R3
+!i10b 1
+!s100 `Ym]iI[m244_Y0WQ_Xo3`0
+Io2UoGMaISR4<^9Qf;8<h=0
+R4
+!s105 tinyalu_bfm_sv_unit
+S1
+R0
+w1648126181
+8tinyalu_bfm.sv
+Ftinyalu_bfm.sv
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Xtinyalu_pkg
+R1
+R3
+!i10b 1
+!s100 2N2@HaO^i6nM[Z4ARV<>@3
+IXnSYOO5_`0Nlj^@4ShUSa1
+VXnSYOO5_`0Nlj^@4ShUSa1
+S1
+R0
+w1497886913
+8tinyalu_pkg.sv
+Ftinyalu_pkg.sv
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vtop
+R1
+R3
+!i10b 1
+!s100 VCIVabfHAM_6mP3U4UK@22
+I3l5XFeMhmA?J8>;<D25oU1
+R4
+!s105 top_sv_unit
+S1
+R0
+w1648124241
+8top.sv
+Ftop.sv
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Ttop_optimized
+!s110 1648127159
+VLC8=8QL295UhO]8Gf<dKW1
+04 3 4 work top fast 0
+o+acc +cover=sbfec+tinyalu(rtl).
+R11
+ntop_optimized
+OL;O;10.7b;67

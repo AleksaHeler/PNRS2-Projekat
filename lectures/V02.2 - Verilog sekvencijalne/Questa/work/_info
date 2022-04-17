@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/RA22-2018/V04 - Verilog sekvencijalne/Questa
+vsemafor
+Z1 !s110 1647958680
+!i10b 1
+!s100 hbIGi_FTzaCK8bLVLYBD>3
+I1i1DIDJkNFTAWW>h6AaGn0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1647958629
+8semafor.v
+Fsemafor.v
+L0 4
+Z3 OL;L;10.7b;67
+r1
+!s85 0
+31
+Z4 !s108 1647958680.000000
+Z5 !s107 semafor_tb.v|semafor.v|
+Z6 !s90 -reportprogress|300|-f|design.f|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vsemafor_tb
+R1
+!i10b 1
+!s100 ^jKE@D6DA;;nD3MEXUG5B2
+IE=o^<[bmAMajJ6lgRg>Y=2
+R2
+R0
+w1647958676
+8semafor_tb.v
+Fsemafor_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+Tsemafor_tb_optimized
+R1
+VCaX2afnzVZ`A]?5U@>8bD2
+04 10 4 work semafor_tb fast 0
+o+acc +cover=sbfec+semafor(rtl).
+R8
+nsemafor_tb_optimized
+OL;O;10.7b;67

@@ -1,0 +1,20 @@
+1. Dodati nova ogranicenja:
+    Con3 -> selektor 1 da implicira podatak => podatak > 200 (veci od 200)
+    Con4 -> selektor 0 => podatak > 128
+
+2. Iskombinovati svih 16 kombinacija ogranicenja
+
+3. Obezbediti da za prvih 8 kombinacija i drugih 8 vrte isti pseudoslucajni sadrzaj
+
+
+if [file exists "work"] {vdel -all}
+vlib work
+vlog randomizacija_10.sv
+vsim rand_tb
+do wave.do
+run -all
+
+
+vlog randomizacija_10.sv
+vsim -novopt rand_tb
+run -all

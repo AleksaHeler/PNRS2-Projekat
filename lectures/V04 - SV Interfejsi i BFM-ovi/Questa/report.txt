@@ -1,0 +1,33 @@
+Coverage Report Summary Data by file
+
+=================================================================================
+=== File: tinyalu_dut/single_cycle_add_and_xor.vhd
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            8         8         0    100.00
+    Branches                        13        13         0    100.00
+    FEC Condition Terms              2         2         0    100.00
+
+=================================================================================
+=== File: tinyalu_dut/three_cycle_mult.vhd
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           19        19         0    100.00
+    Branches                         2         2         0    100.00
+    FEC Expression Terms             8         7         1     87.50
+
+=================================================================================
+=== File: tinyalu_dut/tinyalu.vhd
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           15        15         0    100.00
+    Branches                         9         9         0    100.00
+
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 2
+
+Total Coverage By File (code coverage only, filtered view): 96.87%
+

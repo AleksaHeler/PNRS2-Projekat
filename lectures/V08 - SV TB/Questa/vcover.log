@@ -1,0 +1,9 @@
+QuestaSim-64 vcover 10.4d Coverage Utility 2015.12 Dec 30 2015
+Start time: 14:18:38 on Mar 30,2022
+vcover merge tinyalu.ucdb random_test.ucdb add_test.ucdb 
+Merging file random_test.ucdb
+Merging file add_test.ucdb
+Writing merged result to tinyalu.ucdb
+
+End time: 14:18:38 on Mar 30,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

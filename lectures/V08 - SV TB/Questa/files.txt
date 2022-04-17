@@ -1,0 +1,11 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is 8273-9F4D
+
+ Directory of D:\work\NAuka\2017_UVM_Primer\uvmprimer-master\18_Put_and_Get_in_Action
+
+19.06.2017  17:41             3.234 tinyalu_bfm.sv
+19.06.2017  17:41               587 tinyalu_macros.svh
+19.06.2017  17:41             1.392 tinyalu_pkg.sv
+19.06.2017  17:41             1.049 top.sv
+               4 File(s)          6.262 bytes
+               0 Dir(s)  472.366.346.240 bytes free

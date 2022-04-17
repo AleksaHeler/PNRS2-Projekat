@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/RA22-2018/V03 - Verilog kombinacione/Questa
+vadder
+Z1 !s110 1647956599
+!i10b 1
+!s100 jAZ?9zi97ke2eNoU@UoOo0
+I1o40gDoH>OigoP`K:h5lQ2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1647956113
+8adder.v
+Fadder.v
+L0 6
+Z3 OL;L;10.7b;67
+r1
+!s85 0
+31
+Z4 !s108 1647956599.000000
+Z5 !s107 adder_tb.v|adder.v|
+Z6 !s90 -reportprogress|300|-f|design.f|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vadder_tb
+R1
+!i10b 1
+!s100 0W2K7i:Qj1[=GhIA7?lHa1
+I5fnd9:W;kJN46_KJUhPg63
+R2
+R0
+w1647956579
+8adder_tb.v
+Fadder_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+Tadder_tb_optimized
+R1
+V0WZYFG:O^8kAz^mUfCJH22
+04 8 4 work adder_tb fast 0
+o+acc +cover=sbfec+adder(rtl).
+R8
+nadder_tb_optimized
+OL;O;10.7b;67

@@ -1,0 +1,11 @@
+QuestaSim-64 vcover 10.4d Coverage Utility 2015.12 Dec 30 2015
+Start time: 12:12:12 on Apr 01,2022
+vcover merge device_model_base_test.ucdb device_wr_rd_test.ucdb device_all_wr_rd_test.ucdb deterministic_all_wr_rd_test.ucdb -out device_overall_coverage.ucdb 
+Merging file device_model_base_test.ucdb
+Merging file device_wr_rd_test.ucdb
+Merging file device_all_wr_rd_test.ucdb
+Merging file deterministic_all_wr_rd_test.ucdb
+Writing merged result to device_overall_coverage.ucdb
+
+End time: 12:12:12 on Apr 01,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

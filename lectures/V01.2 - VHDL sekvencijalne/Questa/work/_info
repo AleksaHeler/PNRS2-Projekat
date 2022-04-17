@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/RA22-2018/V2/Questa
+Esemafor
+Z1 w1647952737
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z6 8semafor.vhd
+Z7 Fsemafor.vhd
+l0
+L6
+VNk0W?jh7UMOS0JQk_X]BX2
+!s100 ;N61h_4g8SONi@>>XD@S>0
+Z8 OL;C;10.7b;67
+32
+Z9 !s110 1647952987
+!i10b 1
+Z10 !s108 1647952987.000000
+Z11 !s90 -reportprogress|300|-f|design.f|
+Z12 !s107 semafor_tb.vhd|semafor.vhd|
+!i113 0
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 7 semafor 0 22 Nk0W?jh7UMOS0JQk_X]BX2
+l19
+L15
+V1:EG?LNi]0fgk<j_@OlnH0
+!s100 RdkFmYB3XHa6_eNXe4ZVY3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+Esemafor_tb
+Z14 w1647952901
+R4
+R5
+R0
+Z15 8semafor_tb.vhd
+Z16 Fsemafor_tb.vhd
+l0
+L7
+Vl9H@F0<oN^i:[VSj;Mb<?3
+!s100 `AgO`En@Iga9HkYXMJH;T2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+Abehavior
+R4
+R5
+DEx4 work 10 semafor_tb 0 22 l9H@F0<oN^i:[VSj;Mb<?3
+l37
+L10
+V5c`W7B:KU3d_^:MRcW^>M0
+!s100 =QIC<DlVXSN2g4XJMf7`=1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+Tsemafor_tb_optimized
+R9
+V[GEEl:h?h`^C<8g0d_MO10
+04 10 8 work semafor_tb behavior 1
+o+acc +cover=sbfec+semafor(rtl).
+tCvgOpt 0
+nsemafor_tb_optimized
+OL;O;10.7b;67
